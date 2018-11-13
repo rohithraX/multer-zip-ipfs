@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://www.google.com">
+	<script src="http://www.google.com/recaptcha/api.js?onload=myCallBack&render=explicit" async defer></script>
+	<title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+</head>
+<body >
+	<div class="container">
+	    <form action="/string" method="post" >
+		    <div class="form-group">
+				<label for="input">enter query</label>
+			    <input type="text" class="form-control" name="string" id="string" placeholder="string">
+			</div>
+			<button id="buttonMain" type="submit" class="btn btn-primary">add string to chain</button>
+		</form>
+		<br>
+        <form action="/file" method="post" enctype="multipart/form-data">
+			<div class="form-group">
+				<input type="file" name="file" />
+		        <button id="buttonMain" type="submit" class="btn btn-primary">add file to chain</button>
+			</div>
+		</form>
+		<br>
+        <form action="/search" method="post" id="issueInputForm">
+			<div class="form-group">
+				<label for="input">enter query</label>
+				<input type="text" class="form-control" name="input" id="input" placeholder="input">
+			</div>
+			<div class="form-group">
+			    <select id="option" class="form-control" name="option" placeholder="input method">
+					<option >String</option>
+					<option >sha256 Hash</option>
+				</select>
+			</div>
+			<button id="buttonMain" type="submit" class="btn btn-primary">check</button>
+		</form>
+		<br>
+		<form action="/getfile" method="post" >
+		    <div class="form-group">
+				<label for="input">enter ipfs hash to retrieve file/string content</label>
+			    <input type="text" class="form-control" name="query" id="query" placeholder="ipfs hash">
+			</div>
+			<button id="buttonMain" type="submit" class="btn btn-primary">retrieve</button>
+		</form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+</body>
+</html>
